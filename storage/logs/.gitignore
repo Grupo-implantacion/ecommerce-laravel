@@ -1,0 +1,31 @@
+# Ignorar archivos generados por el sistema
+*.log
+*.env
+
+# Ignorar carpetas generadas por Laravel
+vendor/
+node_modules/
+public/storage/
+/storage/*.key
+Homestead.json
+Homestead.yaml
+npm-debug.log
+
+# Ignorar archivos y carpetas específicos
+.idea/
+.DS_Store
+.env
+.env.backup
+.env.example
+.phpunit.result.cache
+Homestead.yaml
+Homestead.json
+/_ide_helper.php
+/_ide_helper_models.php
+
+# Ignorar archivos de configuración local
+config/local/*.php
+
+# Ignorar archivos de respaldo
+*.bak
+*.swp
