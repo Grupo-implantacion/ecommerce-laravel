@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2023 a las 15:53:49
+-- Tiempo de generación: 10-12-2023 a las 18:31:58
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -603,11 +603,11 @@ INSERT INTO `estados` (`id_estado`, `estado`, `iso_3166-2`) VALUES
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
+  `uuid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `connection` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `queue` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -624,7 +624,7 @@ CREATE TABLE `historiales` (
   `id_producto` int(11) NOT NULL,
   `status_pedido` tinyint(1) NOT NULL,
   `id_pago` int(11) NOT NULL,
-  `info_pedido` varchar(250) NOT NULL,
+  `info_pedido` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `total_pedido` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -636,8 +636,8 @@ CREATE TABLE `historiales` (
 
 CREATE TABLE `metodos_pago` (
   `id_metodo_pago` int(11) NOT NULL,
-  `nombre` varchar(50) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
+  `nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `descripcion` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `id_pedido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -649,7 +649,7 @@ CREATE TABLE `metodos_pago` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -1025,7 +1025,7 @@ INSERT INTO `municipios` (`id_municipio`, `id_estado`, `municipio`) VALUES
 
 CREATE TABLE `pagos` (
   `fecha_pago` date NOT NULL,
-  `tipo_pago` varchar(50) NOT NULL,
+  `tipo_pago` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `monto_total` float NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_pago` int(11) NOT NULL
@@ -2194,8 +2194,8 @@ INSERT INTO `parroquias` (`id_parroquia`, `id_municipio`, `parroquia`) VALUES
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -2208,13 +2208,13 @@ CREATE TABLE `password_reset_tokens` (
 CREATE TABLE `pedidos` (
   `id_pedido` int(11) NOT NULL,
   `fecha_pedido` date NOT NULL,
-  `codigo_usuario` varchar(50) NOT NULL,
-  `codigo_pedido` varchar(50) NOT NULL,
-  `lista_productos` varchar(50) NOT NULL,
+  `codigo_usuario` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `codigo_pedido` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `lista_productos` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `cantidad_productos` int(11) NOT NULL,
   `precio_producto` float NOT NULL,
-  `status` enum('en espera','por entregar','entregado','cancelado') NOT NULL,
-  `direccion` varchar(50) NOT NULL,
+  `status` enum('en espera','por entregar','entregado','cancelado') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `direccion` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `metodo_pago` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -2226,11 +2226,11 @@ CREATE TABLE `pedidos` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `token` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `abilities` text CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -2245,12 +2245,22 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `producto` (
   `id_producto` int(11) NOT NULL,
-  `nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `precio_producto` double NOT NULL,
-  `codigo` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `status` enum('disponible','no disponible') NOT NULL,
+  `codigo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `status` enum('disponible','no disponible') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `cant_productos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_producto`, `nombre`, `precio_producto`, `codigo`, `status`, `cant_productos`) VALUES
+(123456, 'cuaderno doble linea', 3, 'cua-dobl.line', 'disponible', 25),
+(2345678, 'lapices cajax 12', 6, 'lapi-x12', 'disponible', 45),
+(123456789, 'cuaderno linea', 3, 'cua-line', 'disponible', 20),
+(1234567890, 'cuaderno cuadriculado', 4, 'cua-cuad', 'disponible', 15);
 
 -- --------------------------------------------------------
 
@@ -2260,12 +2270,12 @@ CREATE TABLE `producto` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `role` int(11) NOT NULL DEFAULT 1,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -2286,15 +2296,22 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `passwo
 
 CREATE TABLE `usuario` (
   `id_usuarios` int(11) NOT NULL,
-  `cedula` varchar(10) NOT NULL,
-  `nombres` varchar(60) NOT NULL,
-  `apellidos` varchar(20) NOT NULL,
-  `telefono` varchar(15) NOT NULL,
-  `direccion` text NOT NULL,
-  `correo` text NOT NULL,
-  `password` varchar(50) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
-  `status` enum('activo','inactivo') NOT NULL
+  `cedula` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `nombres` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `apellidos` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `telefono` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `direccion` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `correo` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `status` enum('activo','inactivo') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuarios`, `cedula`, `nombres`, `apellidos`, `telefono`, `direccion`, `correo`, `password`, `status`) VALUES
+(10203040, '30304251', 'johan moises', 'huerta valero', '04145767103', 'la mora cabudare', 'huertajohanmoises@gmail.com', 'johanmoises123.', 'activo');
 
 --
 -- Índices para tablas volcadas
@@ -2372,7 +2389,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1234567891;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -2384,7 +2401,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10203041;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
