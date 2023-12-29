@@ -18,7 +18,7 @@
 								</a>																
 							</li>
 							<li class="nav-item">
-								<a href="categories.html" class="nav-link">
+								<a href="categorias/create" class="nav-link">
 									<i class="nav-icon fas fa-file-alt"></i>
 									<p>Categorias</p>
 								</a>
