@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\TempImagesController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -22,10 +23,12 @@ Route::group(['prefix' => 'admin'], function () {
 
         // Rutas de las categorías
         Route::get('/categorias', [CategoryController::class, 'index'])->name('categorias.index');
-
-
         Route::get('/categorias/create', [CategoryController::class, 'create'])->name('categorias.create');
         Route::post('/categorias', [CategoryController::class, 'store'])->name('categorias.store');
+
+        //temp-images.create
+        Route::post('/upload-temp-image', [TempImagesController::class, 'create'])->name('temp-images.create');
+
 
 
         Route::get('/getSlug',function(Request $request){
