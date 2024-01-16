@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AdminLoginController;
-use App\Http\Controllers\Admin\HomeController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\TempImagesController;
+use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\HomeController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\subcategoryController;
+use App\Http\Controllers\admin\TempImagesController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -21,10 +22,19 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
         Route::get('/logout', [HomeController::class, 'logout'])->name('admin.logout');
 
-        // Rutas de las categorías
-        Route::get('/categorias', [CategoryController::class, 'index'])->name('categorias.index');
-        Route::get('/categorias/create', [CategoryController::class, 'create'])->name('categorias.create');
-        Route::post('/categorias', [CategoryController::class, 'store'])->name('categorias.store');
+        // Category routes
+        Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+        Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+        Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+        Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+        Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+        Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.delete');
+
+
+        // sub category routes
+        Route::get('/sub-categories', [subcategoryController::class, 'index'])->name('sub-categories.index');
+        Route::get('/sub-categories/create', [subcategoryController::class, 'create'])->name('sub-categories.create');
+        Route::post('/sub-categories', [subcategoryController::class, 'store'])->name('sub-categories.store');
 
         //temp-images.create
         Route::post('/upload-temp-image', [TempImagesController::class, 'create'])->name('temp-images.create');

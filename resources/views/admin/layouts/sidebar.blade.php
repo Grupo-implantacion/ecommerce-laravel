@@ -18,13 +18,13 @@
 								</a>																
 							</li>
 							<li class="nav-item">
-								<a href="categorias/create" class="nav-link">
+								<a href="{{ route('categories.index') }}" class="nav-link">
 									<i class="nav-icon fas fa-file-alt"></i>
 									<p>Categorias</p>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="subcategory.html" class="nav-link">
+								<a href="{{ route('sub-categories.create') }}" class="nav-link">
 									<i class="nav-icon fas fa-file-alt"></i>
 									<p>Sub Categorias</p>
 								</a>
