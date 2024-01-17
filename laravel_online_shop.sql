@@ -3262,6 +3262,13 @@ CREATE TABLE `metodos_pago` (
   `id_pedido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+INSERT INTO `metodos_pago` (`id_metodo_pago`, `nombre`, `descripcion`, `id_pedido`) VALUES
+(0, 'DEBITO', '', 10000001),
+(1, 'EFECTIVO', '', 1000002),
+(3, 'TRANSFERENCIA', '', 10000003),
+(4, 'DIVISAS', '', 1000004);
+
 -- --------------------------------------------------------
 
 --
