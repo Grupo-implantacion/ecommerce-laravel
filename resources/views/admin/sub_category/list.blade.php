@@ -57,7 +57,7 @@
                         </thead>
                         <tbody>
                             @if ($subCategories->isNotEmpty())
-                                @foreach ($categories as $subCategory)
+                                @foreach ($subCategories as $subCategory)
                                     <tr>
                                         <td>{{ $subCategory->id }}</td>
                                         <td>{{ $subCategory->name }}</td>
