@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-01-2024 a las 00:15:27
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 17-01-2024 a las 15:08:03
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `laravel_online_shop_prueba`
+-- Base de datos: `laravel_online_shop`
 --
 
 -- --------------------------------------------------------
@@ -7939,49 +7939,6 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `passwo
 (1, 'Admin', 'admin@example.com', 2, NULL, '$2y$12$TgMLyyLA6kQ1hcLoSOlNmuIlOAZ71Xo8yykpvjQkjuCCaiXsXlgzO', NULL, '2023-11-29 00:21:19', '2023-11-29 00:21:19'),
 (2, 'Luis Rodríguez', 'fyzton@gmail.com', 1, NULL, '$2y$12$HXFhNerjO1JELOz.slyPuOZsCiOVO354rLRxJR.Jt.vUXLqQR3F/O', NULL, '2023-11-29 00:29:19', '2023-11-29 00:29:19');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuario`
---
-
-CREATE TABLE `usuario` (
-  `id_usuarios` int(11) NOT NULL,
-  `cedula` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nombres` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `apellidos` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `telefono` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `direccion` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `correo` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `password` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `status` enum('activo','inactivo') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`id_usuarios`, `cedula`, `nombres`, `apellidos`, `telefono`, `direccion`, `correo`, `password`, `status`) VALUES
-(10203040, '30304251', 'johan moises', 'huerta valero', '04145767103', 'la mora cabudare', 'huertajohanmoises@gmail.com', '\0\0\0j\0\0\0o\0\0\0h\0\0\0a\0\0\0n\0\0\0m\0\0\0o\0\0\0i\0\0\0s\0\0\0e\0\0\0s\0\0\01\0\0', 'activo');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL,
-  `nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `apellido` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `correo` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `telefono` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `direccion` text CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `contrasena` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `rol` enum('cliente','admin') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'cliente',
-  `fecha_registro` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
 --
 -- Índices para tablas volcadas
 --
@@ -8060,18 +8017,6 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuarios`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -8128,18 +8073,6 @@ ALTER TABLE `temp_images`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10203041;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
