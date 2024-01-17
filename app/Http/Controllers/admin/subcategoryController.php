@@ -12,7 +12,7 @@ class subCategoryController extends Controller
 {
 
     public function index(Request $request) {
-        $subCategories = subCategory::select('sub_categories.*','categories.name as categoryName')
+        $sub_Categories = subCategory::select('sub_categories.*','categories.name as categoryName')
                             ->latest('sub_categories.id')
                             ->leftJoin('categories','categories.id','sub_categories.category_id');
 

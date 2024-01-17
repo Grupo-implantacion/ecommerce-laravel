@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
 {
-    public function index(Request $request){        
+    public function index(Request $request){
         $categories = Category::latest();
 
         if (!empty($request->get('keyword'))){

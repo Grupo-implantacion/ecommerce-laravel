@@ -54,7 +54,7 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="slug">status</label>											
-                                                <select name="status" id="status" class="form-control">
+                                                <select name="status" id=""class="form-control">
                                                     <option value="1">Activate</option>
                                                     <option value="0">Block</option>
                                                 </select>
@@ -66,7 +66,7 @@
                             </div>
                             <div class="pb-5 pt-3">
                                 <button type="submit" class="btn btn-primary">Create</button>
-                                <a href="{{ route('sub-categories.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
+                                <a href="subcategory.html" class="btn btn-outline-dark ml-3">Cancel</a>
                             </div>
                         </form>
 					</div>
@@ -77,53 +77,10 @@
 
 @section('customJs')
 <script>
-    const form = document.querySelector('#subCategoryForm')
-
-
-    form.addEventListener('submit', async (event) => {
+$("#subCategoryForm").submit(function(event) {
         event.preventDefault();
-        const name = document.querySelector('#name').value
-    const slugField = document.querySelector("#slug").value;
-    const status = document.querySelector("#status").value;
-    const categoryId = document.querySelector("#category").value;
-
-
-    const res = await window.fetch('{{ route("sub-categories.store")  }}', {
-            method: 'POST',
-            headers: { 'Content-type': 'application/json' }
-            body: JSON.stringify({
-                'name': name,
-            'slug': slugField,
-            'category_id': categoryId,
-            'status': status
-            })
-        })
-
-        const data = await res.json()
-
-        console.log("data", data)
-  
-    })
-
-
-$("#subCategoryForm").submit(async function(event) {
-        event.preventDefault();
-
-
-
-      /*  const res = await window.fetch('{{ route("sub-categories.store")  }}', {
-            method: 'POST',
-            headers: { 'Content-type': 'application/json' }
-            body: JSON.stringify({
-                'name':,
-            'slug':,
-            'category_id':
-            'status':
-            })
-        })*/
         
         var element = $("#subCategoryForm");
-        console.log(element)
         $("button[type=submit]").prop('disabled',true);
         $.ajax({
             url: '{{ route("sub-categories.store") }}',
@@ -174,7 +131,7 @@ $("#subCategoryForm").submit(async function(event) {
                     if (errors['category']) {
                         $("#category").addClass('is-invalid')
                         .siblings('p')
-                        .addClass('invalid-feedback').html(errors['category']);
+                        .addClass('invalid-feedback').html(errors['slug']);
                     } else {
                         $("#category").removeClass('is-invalid')
                         .siblings('p')
@@ -182,8 +139,7 @@ $("#subCategoryForm").submit(async function(event) {
                     }
                 }
 
-            },  
-            error: function(jqXHR, exception) {
+            },  error: function(jqXHR, exception) {
                 console.log("Algo salió mal");
             }
         });
