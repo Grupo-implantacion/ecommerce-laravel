@@ -1,6 +1,6 @@
 <?php
 
-//use Illuminate\Support\Str;
+use Illuminate\Support\Str;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminLoginController;
@@ -9,14 +9,15 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\subcategoryController;
 use App\Http\Controllers\admin\TempImagesController;
 use Illuminate\Http\Request;
-use App\Http\Controller\FrontController;
+use App\Http\Controllers\FrontController;
 
 
+/*Route::get('/', function () {
+//    return view('welcome');
+});*/
 
-
-
-Route::get('/', [App\Http\Controllers\FrontController::class, 'index'])->name('front.home');
-
+//Route::get('/',[FrontController::class, 'index'])->name('front.home');
+Route::get('/',[FrontController::class, 'index'])->name('front.home');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'admin.guest'], function () {
