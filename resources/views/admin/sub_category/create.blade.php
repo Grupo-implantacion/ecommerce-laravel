@@ -83,7 +83,7 @@ $("#subCategoryForm").submit(function(event) {
         var element = $("#subCategoryForm");
         $("button[type=submit]").prop('disabled',true);
         $.ajax({
-            url: '{{ route("sub-categories.store") }}',
+            url: '{{ route("sub-categories.list") }}',
             type: 'post',
             data: element.serializeArray(),
             dataType: 'json',

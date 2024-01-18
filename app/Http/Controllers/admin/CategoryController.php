@@ -95,81 +95,52 @@ class CategoryController extends Controller
         return view('admin.category.edit',compact('category'));
     }
 
-    public function update($categoryId, Request $request){
-        
-        $category = category::find($categoryId);
-        
+    public function update($categoryId, Request $request)
+    {
+        $category = Category::find($categoryId);
+    
         if (empty($category)) {
             $request->session()->flash('error', 'Categoria no encontrada');
             return response()->json([
                 'status' => false,
                 'notFound' => true,
-                'message' => 'category not found'
-                ]);
+                'message' => 'Categoría no encontrada'
+            ]);
         }
-        
-        $validator = Validator::make($request->all(),[
+    
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'slug' => 'required|unique:categories,slug,'.$category->id.',id',
+            'slug' => 'required|unique:categories,slug,' . $category->id . ',id',
         ]);
-
+    
         if ($validator->passes()) {
-
-            //$category = new Category();
+    
             $category->name = $request->name;
             $category->slug = $request->slug;
             $category->status = $request->status;
             $category->save();
-
+    
             $oldImage = $category->image;
-
-            //Save Image Here
-            if(!empty($request->image_id)) {
-                $tempImage = TempImage::find($request->image_id);
-                $extArray = explode('.',$tempImage->name);
-                $ext = last($extArray);
-
-                $newImageName = $category->id.'-'.time().'.'.$ext;
-                $sPath = public_path().'/temp/'.$tempImage->name;
-                $dPath = public_path().'/uploads/categories/'.$newImageName;
-                File::copy($sPath,$dPath);
-
-
-                //generate image thumbail
-                $dPath = public_path().'/uploads/category/thumb/'.$newImageName;
-                $img = image::make($sPath);
-                //$img->resize(450,600);
-                $img->fit(450, 600, function ($constraint) {
-                    $constraint->upsize();
-                });
-                $img->save($dPath);
-
-                $category->image = $newImageName;
-                $category->save();
-
-                // delete old images here
-                file::delete(public_path().'/uploads/category/thumb/'.$oldImage);
-                file::delete(public_path().'/uploads/category/'.$oldImage);
-
-
-            }
-
-            $request->session()->flash('success', 'Categoria modificada satisfactoriamente');
-
+    
+            // delete old images here
+            File::delete(public_path() . '/uploads/category/thumb/' . $oldImage);
+            File::delete(public_path() . '/uploads/category/' . $oldImage);
+    
+            $request->session()->flash('success', 'Categoría modificada satisfactoriamente');
+    
             return response()->json([
                 'status' => true,
-                'message' => 'Categoria modificada satisfactoriamente'
-                
+                'message' => 'Categoría modificada satisfactoriamente'
             ]);
-
+    
         } else {
             return response()->json([
                 'status' => false,
                 'errors' => $validator->errors()
-                
             ]);
         }
     }
+    
 
     public function destroy($categoryId, Request $request){
         $category = category::find($categoryId);
@@ -191,4 +162,5 @@ class CategoryController extends Controller
             
         ]);
     }
+
 }
