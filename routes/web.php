@@ -1,16 +1,16 @@
 <?php
 
-use Illuminate\Support\Str;
+//use Illuminate\Support\Str;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\BrandController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\subcategoryController;
 use App\Http\Controllers\admin\TempImagesController;
 use Illuminate\Http\Request;
 use App\Http\Controller\FrontController;
-
 
 
 
@@ -39,11 +39,20 @@ Route::group(['prefix' => 'admin'], function () {
 
 
         // sub category routes
-        Route::get('/sub-categories', [SubcategoryController::class, 'index'])->name('sub-categories.index');
-        Route::get('/sub-categories/create', [SubcategoryController::class, 'create'])->name('sub-categories.create');
-        Route::post('/sub-categories', [SubcategoryController::class, 'store'])->name('sub-categories.store');
+        Route::get('/sub-categories', [subcategoryController::class, 'index'])->name('sub-categories.index');
+        Route::get('/sub-categories/create', [subcategoryController::class, 'create'])->name('sub-categories.create');
+        Route::post('/sub-categories', [subcategoryController::class, 'store'])->name('sub-categories.store');
 
-      
+
+        //Brands Routes
+        Route::get('/brands/create', [BrandController::class, 'create'])->name('brands.create');
+        Route::post('/brands', [BrandController::class, 'store'])->name('brands.store');
+
+
+
+        //temp-images.create
+        Route::post('/upload-temp-image', [TempImagesController::class, 'create'])->name('temp-images.create');
+
 
 
         Route::get('/getSlug',function(Request $request){

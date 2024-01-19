@@ -89,51 +89,53 @@
 
 					<li class="nav-item dropdown">
 						<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Papelería y cuadernos
+							Electronics
 						</button>
 						<ul class="dropdown-menu dropdown-menu-dark">
-							<li><a class="dropdown-item nav-link" href="#">Papel Bond</a></li>
-							<li><a class="dropdown-item nav-link" href="#">Cuadernos</a></li>
-							<li><a class="dropdown-item nav-link" href="#">Blocs de notas</a></li>
-							<li><a class="dropdown-item nav-link" href="#">Papel de colores</a></li>
-							<li><a class="dropdown-item nav-link" href="#">Sobres y cartas</a></li>
+							<li><a class="dropdown-item nav-link" href="#">Mobile</a></li>
+							<li><a class="dropdown-item nav-link" href="#">Tablets</a></li>
+							<li><a class="dropdown-item nav-link" href="#">Laptops</a></li>
+							<li><a class="dropdown-item nav-link" href="#">Speakers</a></li>
+							<li><a class="dropdown-item nav-link" href="#">Watches</a></li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown">
 						<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Materiales de escritura
+							Men's Fashion
 						</button>
 						<ul class="dropdown-menu dropdown-menu-dark">
-							<li><a class="dropdown-item" href="#">Bolígrafos</a></li>
-							<li><a class="dropdown-item" href="#">Lápices</a></li>
-							<li><a class="dropdown-item" href="#">Marcadores</a></li>
-							<li><a class="dropdown-item" href="#">Rotuladores</a></li>
-							<li><a class="dropdown-item" href="#">Portaminas</a></li>
+							<li><a class="dropdown-item" href="#">Shirts</a></li>
+							<li><a class="dropdown-item" href="#">Jeans</a></li>
+							<li><a class="dropdown-item" href="#">Shoes</a></li>
+							<li><a class="dropdown-item" href="#">Watches</a></li>
+							<li><a class="dropdown-item" href="#">Perfumes</a></li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown">
 						<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Material de Dibujo y Arte
+							Women's Fashion
 						</button>
 						<ul class="dropdown-menu dropdown-menu-dark">
-							<li><a class="dropdown-item" href="#">Lápices de colores</a></li>
-							<li><a class="dropdown-item" href="#">Crayones</a></li>
-							<li><a class="dropdown-item" href="#">Acuarelas</a></li>
-							<li><a class="dropdown-item" href="#">Pinceles</a></li>
-							<li><a class="dropdown-item" href="#">Blocs de dibujo</a></li>
-							<li><a class="dropdown-item" href="#">Óleos</a></li>
+							<li><a class="dropdown-item" href="#">T-Shirts</a></li>
+							<li><a class="dropdown-item" href="#">Tops</a></li>
+							<li><a class="dropdown-item" href="#">Jeans</a></li>
+							<li><a class="dropdown-item" href="#">Shoes</a></li>
+							<li><a class="dropdown-item" href="#">Watches</a></li>
+							<li><a class="dropdown-item" href="#">Perfumes</a></li>
 						</ul>
 					</li>
 
 					<li class="nav-item dropdown">
 						<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Organización y Archivo
+							Appliances
 						</button>
 						<ul class="dropdown-menu dropdown-menu-dark">
-							<li><a class="dropdown-item" href="#">Carpetas</a></li>
-							<li><a class="dropdown-item" href="#">Archivadores</a></li>
-							<li><a class="dropdown-item" href="#">Fundas plásticas</a></li>
-							<li><a class="dropdown-item" href="#">Separadores</a></li>
+							<li><a class="dropdown-item" href="#">TV</a></li>
+							<li><a class="dropdown-item" href="#">Washing Machines</a></li>
+							<li><a class="dropdown-item" href="#">Air Conditioners</a></li>
+							<li><a class="dropdown-item" href="#">Vacuum Cleaner</a></li>
+							<li><a class="dropdown-item" href="#">Fans</a></li>
+							<li><a class="dropdown-item" href="#">Air Coolers</a></li>
 						</ul>
 					</li>
 					
@@ -220,25 +222,25 @@
                 <div class="col-lg-3">
                     <div class="box shadow-lg">
                         <div class="fa icon fa-check text-primary m-0 mr-3"></div>
-                        <h2 class="font-weight-semi-bold m-0">Calidad de productos</h5>
+                        <h2 class="font-weight-semi-bold m-0">Quality Product</h5>
                     </div>                    
                 </div>
                 <div class="col-lg-3 ">
                     <div class="box shadow-lg">
                         <div class="fa icon fa-shipping-fast text-primary m-0 mr-3"></div>
-                        <h2 class="font-weight-semi-bold m-0">Envío gratis</h2>
+                        <h2 class="font-weight-semi-bold m-0">Free Shipping</h2>
                     </div>                    
                 </div>
                 <div class="col-lg-3">
                     <div class="box shadow-lg">
                         <div class="fa icon fa-exchange-alt text-primary m-0 mr-3"></div>
-                        <h2 class="font-weight-semi-bold m-0">Garantía de 15 días</h2>
+                        <h2 class="font-weight-semi-bold m-0">14-Day Return</h2>
                     </div>                    
                 </div>
                 <div class="col-lg-3 ">
                     <div class="box shadow-lg">
                         <div class="fa icon fa-phone-volume text-primary m-0 mr-3"></div>
-                        <h2 class="font-weight-semi-bold m-0">Atención al cliente 24/7</h5>
+                        <h2 class="font-weight-semi-bold m-0">24/7 Support</h5>
                     </div>                    
                 </div>
             </div>
@@ -247,7 +249,7 @@
     <section class="section-3">
         <div class="container">
             <div class="section-title">
-                <h2>Categorias</h2>
+                <h2>Categories</h2>
             </div>           
             <div class="row pb-3">
                 <div class="col-lg-3">

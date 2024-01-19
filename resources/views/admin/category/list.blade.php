@@ -24,7 +24,7 @@
                 <form action="" method="get">
                     <div class="card-header">
 						<div class="card-title">
-							<button type="button" onclick="window.location.href='{{ route('categories.index') }}'" class="btn btn-default btn-sm">Reset</button>
+							<button type="button" onclick="window.location.href='{{ route("categories.index") }}'" class="btn btn-default btn-sm">Reset</button>
 						</div>
 
                         <div class="card-tools">
