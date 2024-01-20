@@ -1,68 +1,35 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Bienvenido a nuestra tienda de papelería
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+¡Bienvenido a nuestra tienda de papelería en línea! Aquí encontrarás una amplia variedad de productos de papelería de alta calidad, desde bolígrafos y cuadernos hasta artículos de arte y manualidades. Nuestro objetivo es proporcionarte los mejores productos para satisfacer tus necesidades de papelería.
 
-## About Laravel
+## descripcion del sistema
+este sistema fue realizado para una papeleria que se encarga de la venta de productos como boligrafos, libretas, lapices, diferentes tipos de papeles, entre muchos mas productos, los cuales se espera que tenga un mayor alcance de venta para sus clientes facilitando este sistema, donde podremos observar que facilita al cliente la busqueda que sus productos favoritos y puede realizar la compra desde sus hogares tanto desde sus computadoras como desde sus dispositivos moviles, este sistema se diseño para ser muy sencillo y practico para el cliente, contando con una interfaz muy directa y comoda para los futuros visitantes de la pagina logrando asi una gran facilidad de interaccion para cualquier proceso tanto como visualizar los productos disponibles, busqueda de productos deseados, agregacion al carrito de compras, registro de datos del cliente, ingreso de direccion para la entrega o el envio, facilidad de diversos metodos de pago, entre otros procesos.
+Este sistema tambien establece un interaccion sencilla del lado de los administradores ya que tambien posee una interfaz comoda y sencilla para cualquier modificacion necesaria tanto en el ambito de arreglos o cambios de mercancia o disponibilidad como busqueda de cualquier informacion de pedidos, clientes, y registros de compras.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## instalacion
+para la instalacion de este proyecto podemos hacerlo de una forma muy sencilla, si deseas hacerla por medio de github de manera automatica se puede entrar a: https://github.com/Grupo-implantacion/ecommerce-laravel.git.
+aca tenemos la opcion de descarga el .zip del repositorio, luego de descargarlo localizas el archivo en su direccion de descargas elegida, se descomprime el archivo preferiblemente dentro de la carpeta hdotc del xampp, para que pueda leer la base de datos sin ningun problema.
+luego de descomprimir el archivo nos dirijimos a la carpeta laravel_online_shop, abrimos el cmd dentro de esta carpeta y escribiremos el siguiente codigo:  php artisan serve. 
+esto abrira el sistema en nuesto navegador y alli podremos observar lo dasarrollado en dicho proyecto.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## estado del proyecto
+En este momento el desarrollo del proyecto se encuentra en un estado "alfa" ya que aun hay ventanas que deseamos y esperamos completar para la mejor interaccion tanto del usuario como cliente asi como de los administradores, tambien la agregacion de pantallas como la introduccion de los datos de direccion del cliente al momento de hacer la compra, la impresion de la factura de la compra, y otras pantallas con el fin del culminar el desarrollo del sistema.
 
-## Learning Laravel
+## Cómo comprar
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Explora nuestra colección de productos y encuentra tus artículos favoritos.
+2. Agrega los productos que deseas comprar a tu carrito.
+3. procede al registro de tu informacion personal para planificar la entrega o envio de los productos.
+4. Procede al pago y elige el método de envío que prefieras.
+5. ¡Listo! Tu pedido estará en camino y pronto podrás disfrutar de tus nuevos artículos de papelería.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Nuestros productos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ofrecemos una amplia gama de productos de papelería, incluyendo:
+- Bolígrafos y lápices de colores
+- Cuadernos y blocs de notas
+- Artículos de arte y manualidades
+- Organizadores y accesorios de escritorio
+- Y mucho más
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# ecommerce-laravel
-"# ecommerce-laravel" 
