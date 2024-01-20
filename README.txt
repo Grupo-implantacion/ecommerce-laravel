@@ -7,6 +7,9 @@ este sistema fue realizado para una papeleria que se encarga de la venta de prod
 Este sistema tambien establece un interaccion sencilla del lado de los administradores ya que tambien posee una interfaz comoda y sencilla para cualquier modificacion necesaria tanto en el ambito de arreglos o cambios de mercancia o disponibilidad como busqueda de cualquier informacion de pedidos, clientes, y registros de compras.
 
 ## instalacion
+Ante todo para lograr visualizar todo lo referente a este sistema tenemos que tener en cuenta varios programas que seran necesarios para esto:
+xampp v8.2.12
+Composer v2.6.6
 para la instalacion de este proyecto podemos hacerlo de una forma muy sencilla, si deseas hacerla por medio de github de manera automatica se puede entrar a: https://github.com/Grupo-implantacion/ecommerce-laravel.git.
 aca tenemos la opcion de descarga el .zip del repositorio, luego de descargarlo localizas el archivo en su direccion de descargas elegida, se descomprime el archivo preferiblemente dentro de la carpeta hdotc del xampp, para que pueda leer la base de datos sin ningun problema.
 luego de descomprimir el archivo nos dirijimos a la carpeta laravel_online_shop, abrimos el cmd dentro de esta carpeta y escribiremos el siguiente codigo:  php artisan serve. 
